@@ -13,7 +13,7 @@ install, as you should with any plugin that ships hooks.
 
 ## Reporting a vulnerability
 
-Email **ettaibothmane@gmail.com** with the details and a way to reproduce it. Please do not
+Email **indiecode25@gmail.com** with the details and a way to reproduce it. Please do not
 open a public issue for a security problem.
 
 Expect a reply within a week. If the report is valid, you will be credited in the changelog
