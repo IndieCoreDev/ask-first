@@ -1,0 +1,29 @@
+{
+  "description": "Enforces the ask-first rules: one question per card with a marked recommendation (deterministic), and no questions left in prose (LLM-judged at stop).",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/check-card.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Look ONLY at the final assistant message in the transcript. Return 'block' if, and only if, that message asks the user a question that must be answered before the work can continue, and it was written as plain text rather than sent through the AskUserQuestion tool. Signals: a '?' addressed to the user, or phrases like 'let me know', 'should I', 'do you want', 'if you'd like', 'which would you prefer'. Return 'approve' in every other case, including: the message reports what was done, the message states an assumption it is acting on without needing an answer, the message ends with a rhetorical or summarising question, the assistant already used AskUserQuestion in this turn, or the assistant is reporting that it is blocked and cannot proceed at all. When blocking, the reason must be exactly: 'ask-first: you asked in prose. Put that question in an AskUserQuestion card instead - one question, the option you recommend first with (Recommended) at the end of its label.' Bias strongly towards approve; a wrong block costs the user a turn.",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

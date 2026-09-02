@@ -35,6 +35,22 @@ like a paragraph, so the part that needs you stops hiding.
 | 5 | Get your final goal when the request does not say why, and judge every recommendation against it |
 | 6 | Show the difference with a preview when there is something to look at |
 
+## What is enforced, and what is only taught
+
+A skill is instruction: it puts rules in the model's context, and the model mostly follows
+them. This plugin also ships hooks, which run whether the model agrees or not.
+
+| Rule | How |
+| --- | --- |
+| One question per card | Hook, deterministic. The call is rejected before it is sent. |
+| Recommendation first, marked | Hook, deterministic. Rejected, with the position named. |
+| No question left in prose | Hook, LLM-judged when the turn ends. Blocks and asks for a card. |
+| Only questions in the card | Skill only. |
+| Name the goal, judge against it | Skill only. |
+
+That split is the honest one. A hook can check a shape. Whether a question named your real
+goal is a judgement, and the only lever there is the skill text.
+
 ## Questions people ask
 
 ### Can I install a Claude skill from a gist?
