@@ -1,6 +1,6 @@
 ---
 name: ask-first
-version: 0.4.0
+version: 0.5.0
 description: Ask the user in an AskUserQuestion card, never in prose — one question at a time, the first option marked as recommended, judged against the user's final goal. Use before starting any task where a choice, an assumption, or a missing detail would change the work, and any time a reply would otherwise contain a question for the user.
 ---
 
@@ -136,6 +136,7 @@ Two of them are not left to your judgement:
 
 - a card carrying more than one question is rejected before it is sent
 - a card whose first option is not marked `(Recommended)` is rejected
+- a turn that ends with a question in prose is blocked, and you are asked to send a card
 
 If a rejection comes back, fix the card and send it again. Do not fall back to asking in
 prose — that is the thing being prevented.

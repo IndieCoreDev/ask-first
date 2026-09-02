@@ -44,7 +44,7 @@ them. This plugin also ships hooks, which run whether the model agrees or not.
 | --- | --- |
 | One question per card | Hook, deterministic. The call is rejected before it is sent. |
 | Recommendation first, marked | Hook, deterministic. Rejected, with the position named. |
-| No question left in prose | Hook, LLM-judged when the turn ends. Blocks and asks for a card. |
+| No question left in prose | Hook, deterministic. The turn is blocked until it becomes a card. |
 | Only questions in the card | Skill only. |
 | Name the goal, judge against it | Skill only. |
 
