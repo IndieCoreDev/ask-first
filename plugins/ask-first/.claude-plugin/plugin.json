@@ -1,11 +1,12 @@
 {
   "name": "ask-first",
+  "version": "0.6.0",
   "description": "Put every question to the user in an AskUserQuestion card instead of prose - one at a time, with a recommended first option judged against the user's stated final goal",
   "author": {
-    "name": "IndieCoreDev"
+    "name": "IndieCoreDev",
+    "url": "https://github.com/IndieCoreDev"
   },
   "homepage": "https://github.com/IndieCoreDev/ask-first",
-  "version": "0.6.0",
   "repository": "https://github.com/IndieCoreDev/ask-first",
   "license": "MIT",
   "keywords": [

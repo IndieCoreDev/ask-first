@@ -3,18 +3,37 @@
   "name": "ask-first",
   "description": "Skills that make an agent ask well instead of writing long replies",
   "owner": {
-    "name": "IndieCoreDev"
+    "name": "IndieCoreDev",
+    "url": "https://github.com/IndieCoreDev"
   },
   "plugins": [
     {
       "name": "ask-first",
+      "source": "./plugins/ask-first",
+      "version": "0.6.0",
       "description": "Put every question to the user in an AskUserQuestion card instead of prose - one at a time, with a recommended first option judged against the user's stated final goal",
       "author": {
-        "name": "IndieCoreDev"
+        "name": "IndieCoreDev",
+        "url": "https://github.com/IndieCoreDev"
       },
-      "source": "./plugins/ask-first",
+      "homepage": "https://github.com/IndieCoreDev/ask-first",
+      "repository": "https://github.com/IndieCoreDev/ask-first",
+      "license": "MIT",
       "category": "productivity",
-      "homepage": "https://github.com/IndieCoreDev/ask-first"
+      "keywords": [
+        "questions",
+        "askuserquestion",
+        "hooks",
+        "ux",
+        "decisions"
+      ],
+      "tags": [
+        "questions",
+        "hooks",
+        "ux",
+        "decisions",
+        "claude-code"
+      ]
     }
   ],
   "metadata": {
