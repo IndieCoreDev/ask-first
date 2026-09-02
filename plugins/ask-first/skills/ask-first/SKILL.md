@@ -1,6 +1,6 @@
 ---
 name: ask-first
-version: 0.2.0
+version: 0.3.0
 description: Ask the user in an AskUserQuestion card, never in prose — one question at a time, the first option marked as recommended, judged against the user's final goal. Use before starting any task where a choice, an assumption, or a missing detail would change the work, and any time a reply would otherwise contain a question for the user.
 ---
 
@@ -66,6 +66,19 @@ reading tax this skill exists to remove.
 
 Never ask the goal blind. Read the request and the code first, then offer the two or three
 goals that actually fit, so the user confirms with one click instead of writing a paragraph.
+
+**Find out cheaply before you ask.** If reading the code, running the thing, or timing it
+would change what the options are, do that first. A question asked before the facts makes the
+user guess, and they have less to guess with than you do.
+
+Then, if the options still serve different goals, put the goal *in the question itself*
+rather than in a separate card:
+
+> Local work is 60 ms; the 249 ms is one network call. What are you optimising for — a CI run
+> that cannot hang, or a faster local run?
+
+Not: "which change should I make?" — that asks the user to work backwards from the changes to
+the goal, which is the reasoning you were supposed to do for them.
 
 Every later recommendation is measured against that goal. Without one a model recommends what
 is convenient nearby, which is how a confident answer to the wrong problem gets built.
