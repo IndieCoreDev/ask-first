@@ -10,6 +10,8 @@
 
 import { readFileSync } from "node:fs";
 
+// A turn that ends waiting for the user is a question, whatever punctuation it uses.
+// These are the ways that waiting gets phrased without a question mark.
 const PHRASES = [
   /\blet me know\b/i,
   /\bshould i\b/i,
@@ -20,6 +22,16 @@ const PHRASES = [
   /\bwant me to\b/i,
   /\bshall i\b/i,
   /\byour call\b/i,
+  // handoffs: no question mark, but the turn stops here until the user speaks
+  /\bsay (go|when|the word)\b/i,
+  /\bjust tell me\b/i,
+  // "tell me where" is a handoff; "the profiler will tell me where" is a report
+  /(?<!\b(?:will|would|won'?t|wouldn'?t|can|could|might|may|should|shall|does|doesn'?t|did|didn'?t|to|never|not|only|also|really)\s)\btell me (which|what|where|whether|if|when)\b/i,
+  /\b(once|when) you (confirm|decide|say|tell|choose|pick)\b/i,
+  /\bconfirm(?:ed)? and i(?:'ll| will)\b/i,
+  /\bready when you are\b/i,
+  /\bwaiting (on|for) (you|your)\b/i,
+  /\byour move\b/i,
 ];
 
 let raw = "";
@@ -82,8 +94,9 @@ process.stdin.on("end", () => {
       reason:
         "ask-first: you ended the turn with a question in prose. Put it in an " +
         "AskUserQuestion card instead: one question, 2-4 options, the one you recommend " +
-        "first with (Recommended) at the end of its label. If it was not really a question " +
-        "for the user, rewrite the line as a statement and finish.",
+        "first with (Recommended) at the end of its label. Rewriting the question as a " +
+        "stated assumption only counts if you then carry on and do the work in this same " +
+        "turn. If the turn ends waiting for the user, it is a question and it needs a card.",
     }),
   );
   process.exit(0);
