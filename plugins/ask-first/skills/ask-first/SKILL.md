@@ -1,5 +1,6 @@
 ---
 name: ask-first
+version: 0.1.0
 description: Ask the user in an AskUserQuestion card, never in prose — one question at a time, the first option marked as recommended, judged against the user's final goal. Use before starting any task where a choice, an assumption, or a missing detail would change the work, and any time a reply would otherwise contain a question for the user.
 ---
 

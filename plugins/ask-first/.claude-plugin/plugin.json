@@ -1,6 +1,9 @@
 {
   "name": "ask-first",
   "description": "Put every question to the user in an AskUserQuestion card instead of prose - one at a time, with a recommended first option judged against the user's stated final goal",
-  "author": { "name": "IndieCoreDev" },
-  "homepage": "https://github.com/IndieCoreDev/ask-first"
+  "author": {
+    "name": "IndieCoreDev"
+  },
+  "homepage": "https://github.com/IndieCoreDev/ask-first",
+  "version": "0.1.0"
 }
