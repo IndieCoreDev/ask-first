@@ -1,5 +1,8 @@
 # Contributing
 
+This project follows a [Code of Conduct](CODE_OF_CONDUCT.md). By taking part you agree to
+uphold it. Security problems go to [SECURITY.md](SECURITY.md), not to a public issue.
+
 ## Before you open a PR
 
 ```sh

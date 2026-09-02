@@ -101,6 +101,12 @@ No. Asking costs you time too. The skill does not ask for a small reversible fix
 obvious default, for anything the code already answers, or for a decision you already made.
 Those get done, and reported in one line.
 
+## Contributing
+
+Bug reports and rule proposals are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[Code of Conduct](CODE_OF_CONDUCT.md). The most useful report is a false block: the hook
+stopping a reply that was not asking you anything.
+
 ## Licence
 
 MIT

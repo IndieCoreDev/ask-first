@@ -1,0 +1,36 @@
+name: Rule proposal
+description: Propose a new rule for the skill or a hook
+labels: [rule]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The bar is the same as every rule already here: it exists because something got past
+        a real session. A rule that merely sounds sensible produces noise, and noise gets
+        ignored, then disabled, then deleted.
+  - type: textarea
+    id: happened
+    attributes:
+      label: What actually happened
+      description: The real exchange that went wrong. Not a hypothetical.
+      render: text
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Teachable or enforceable?
+      description: A rule with a shape can be a hook. A rule needing judgement can only be skill text.
+      options:
+        - Enforceable — it has a shape a script can check
+        - Teachable — it needs judgement, so skill text only
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: falsepositive
+    attributes:
+      label: What would a false positive look like?
+      description: If you cannot describe one, the rule is probably not ready.
+    validations:
+      required: true

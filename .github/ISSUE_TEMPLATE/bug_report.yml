@@ -1,0 +1,36 @@
+name: Bug report
+description: The hook blocked something it should not have, or missed something it should have caught
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The most valuable report here is a **false block** — the hook stopping a reply that
+        was not asking you anything. That is the failure that gets a plugin uninstalled, and
+        it is fixed fastest with the exact text.
+  - type: textarea
+    id: text
+    attributes:
+      label: The reply that was blocked, or the question that got through
+      description: Paste it verbatim. The wording is the bug.
+      render: text
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Which way did it go wrong?
+      options:
+        - Blocked a reply that was not asking me anything
+        - Let a question through in prose
+        - Rejected a card that looked correct
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      placeholder: "0.6.0 — see claude plugin list"
+    validations:
+      required: true
