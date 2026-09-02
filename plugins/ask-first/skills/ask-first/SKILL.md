@@ -1,6 +1,6 @@
 ---
 name: ask-first
-version: 0.1.0
+version: 0.2.0
 description: Ask the user in an AskUserQuestion card, never in prose — one question at a time, the first option marked as recommended, judged against the user's final goal. Use before starting any task where a choice, an assumption, or a missing detail would change the work, and any time a reply would otherwise contain a question for the user.
 ---
 
@@ -48,18 +48,38 @@ user overrule you — they keep the choice, they lose the homework.
 The recommendation must be real. If two options are genuinely equal, say what would decide
 between them inside the descriptions.
 
-### 5. Get the final goal first, and judge everything against it
+### 5. Get the final goal when the reason is missing
 
-Before the first real decision in a task, ask one card: what does done and worth it look like?
+Ask what done and worth it looks like when:
 
-Read the request and the code first, then offer the two or three goals that actually fit, so
-the user confirms with one click instead of writing a paragraph. Never ask this blind.
+- the request says **what** to build but not **why**
+- the options serve different goals — one is right if you want X, another if you want Y
+- the work is large, or hard to undo
 
-Every later recommendation is measured against that answer. Without it a model recommends
-what is convenient nearby, which is how a confident answer to the wrong problem gets built.
+Skip it when the request already says why, or when the goal is plain from the code. Then do
+not ask: write the goal you inferred in one short line, and judge the options against it
+where the user can see it and correct it.
 
+That exception is not softness. Rule 5 and "never ask what the request already answers" pull
+against each other, and a goal card fired after a clear request is ceremony — the same
+reading tax this skill exists to remove.
+
+Never ask the goal blind. Read the request and the code first, then offer the two or three
+goals that actually fit, so the user confirms with one click instead of writing a paragraph.
+
+Every later recommendation is measured against that goal. Without one a model recommends what
+is convenient nearby, which is how a confident answer to the wrong problem gets built.
 Restate the goal in one short line when a later card leans on it, so it survives a long
 conversation.
+
+## Show the difference, do not describe it
+
+When the options differ in something you can show — file content, command output, a layout, a
+shape of data — put that on each option as a `preview`. A reader compares two blocks faster
+than two paragraphs about two blocks, and it does not depend on their English.
+
+Previews work on single-answer questions only. Skip them when the difference is a plain
+preference with nothing to look at.
 
 ## Before sending any reply
 

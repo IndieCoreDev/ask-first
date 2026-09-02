@@ -32,7 +32,8 @@ like a paragraph, so the part that needs you stops hiding.
 | 2 | Only questions — information stays as normal text |
 | 3 | One question at a time, always |
 | 4 | The first option is the recommendation, marked as such |
-| 5 | Get your final goal first, and judge every recommendation against it |
+| 5 | Get your final goal when the request does not say why, and judge every recommendation against it |
+| 6 | Show the difference with a preview when there is something to look at |
 
 ## Questions people ask
 
