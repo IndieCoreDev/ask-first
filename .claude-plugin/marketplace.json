@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ask-first",
+  "description": "Skills that make an agent ask well instead of writing long replies",
+  "owner": { "name": "IndieCoreDev" },
+  "plugins": [
+    {
+      "name": "ask-first",
+      "description": "Put every question to the user in an AskUserQuestion card instead of prose - one at a time, with a recommended first option judged against the user's stated final goal",
+      "author": { "name": "IndieCoreDev" },
+      "source": "./plugins/ask-first",
+      "category": "productivity",
+      "homepage": "https://github.com/IndieCoreDev/ask-first"
+    }
+  ]
+}
