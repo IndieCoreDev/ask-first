@@ -5,5 +5,14 @@
     "name": "IndieCoreDev"
   },
   "homepage": "https://github.com/IndieCoreDev/ask-first",
-  "version": "0.6.0"
+  "version": "0.6.0",
+  "repository": "https://github.com/IndieCoreDev/ask-first",
+  "license": "MIT",
+  "keywords": [
+    "questions",
+    "askuserquestion",
+    "hooks",
+    "ux",
+    "decisions"
+  ]
 }
