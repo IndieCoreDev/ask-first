@@ -38,3 +38,12 @@ The same bar as any check that blocks work:
 
 Plain words. The people reading a card often do not read English as a first language, and a
 rarer word is not a better one.
+
+## The one command
+
+```sh
+node tests/run.mjs
+```
+
+Run it before every push. CI runs the same file on every push and pull request, so a branch
+that fails here cannot merge. Add a case to it for anything you fix.
